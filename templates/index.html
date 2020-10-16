@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href= " {% static "css/style2.css" %} " rel="stylesheet" media="screen">
+    <link href= " {% static "css/bootstrap.min.css" %} " rel="stylesheet" media="screen"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!– Importante llamar antes a jQuery para que funcione bootstrap.min.js   –> 
+    <script src= "{% static "js/bootstrap.min.js" %}"></script> <!– Llamamos al JavaScript de Bootstrap –> 
+    <title>
+    {% block title %}
+        index
+    {% endblock title %}
+    </title>
+</head>
+<body>
+    
+    {% block nav %}    
+        <div class="container-fluid" style="background-color: #4b8a4b;" >
+            <nav class = "navbar navbar-expand-lg navbar-dark" >
+                <a href="{% url 'index' %}" class="navbar-brand">
+                    Economía Circular
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarIndex" >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarIndex">
+                    <ul class = "navbar-nav mr-auto ">
+                        <li class="nav-item active">
+                            <a href="{% url 'index' %}" class="nav-link">Sobre el Proyecto</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="{% url 'participantes' %}" class="nav-link">Entidades participantes</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="{% url 'login' %}" class="nav-link">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    {% endblock nav %}
+        
+    {% block body %}
+        <div class="container" style="padding:5%">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{% static "img/ecoimg.jpg" %}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{% static "img/ecoimg.jpg" %}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock body %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'users/home-user.html' %}
+{% block title %}Entidades{% endblock title %}
+    
+
+
+{% block body %}
+    {% if object_list %}
+        <div class="container" style="padding:5%">
+            <div class="card">
+                <div class="card-header text-ligth" style = "background:#9fedd4;">
+                    <strong class="card-title"><h1 class="text-center">Listado de Entendidades</h1></strong>
+                </div>
+                <div class="table-stats order-table ov-h">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Entendidad</th>
+                                <th>País</th>
+                                <th>Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for entidad in object_list %}
+                                <tr>
+                                    <td>{{ entidad.id }}</td>
+                                    <td>{{ entidad.nombre }}</td>
+                                    <td>{{ entidad.pais }}</td>
+                                    <td>{{ entidad.tipo }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock body %}

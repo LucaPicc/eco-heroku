@@ -1,0 +1,46 @@
+{% extends 'users/home-user.html' %}
+{% block title %}Entidades{% endblock title %}
+    
+
+
+
+{% block body %}
+    <div class="container" style="padding: 5% 0;">
+        <div class="col">
+            <div class="row-sm-5">
+                <div class="card text-center">
+                    <div class="card-header" style="background-color: #ddf6dd;">
+                        <h5>Indice de Productividad : {{cop_indc_prud}} </h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Parametros estadisticos relavantes</h5>
+                        <p class="card-text">Toneladas recuperadas para reciclado por año : {{cop.ton_rec}}</p>
+                        <p class="card-text">Cantidad de empleados : {{cop.empl}} </p>
+                    </div>
+                </div>
+            </div>
+                <div class="row-sm-5">
+                    <div class="card text-center">
+                        <div class="card-header" style="background-color: #ddf6dd;">
+                            <h5>Indice costos GIRSU: {{cop_girsu}} </h5>
+                        </div>
+                        <h5 class="card-title">Parametros estadisticos relevantes</h5>
+                        <p class="card-text">Toneladas Recuperada para reciclado por año: {{cop.ton_rec}} </p>
+                        <p class="card-text">Gastos totales operativos en dolares: {{cop.gast_totales}} </p>
+                    </div>
+                </div>
+                <div class="row-sm-5">
+                    <div class="card text-center">
+                        <div class="card-header" style="background-color: #ddf6dd;">
+                            <h5>Indice de Reciclaje por habitante: {{cop_ind_rec}} </h5>
+                        </div>
+                        <h5 class="card-title">Parametros estadisticos relevantes</h5>
+                        <p class="card-text">Toneladas recuperadas para reciclado: {{cop.ton_rec}} </p>
+                        <p class="card-text">Toneladas a rechazo por año: {{cop.ton_a_rechazo}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

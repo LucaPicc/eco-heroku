@@ -1,0 +1,18 @@
+{% extends 'users/home-user.html' %}
+{% block title %}Productos{% endblock title %}
+
+
+{% block body %}
+
+        <div class="container" style="padding:5% 0">
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class = "btn btn-primary">Resgistrar</button>
+            </form>
+        </div>
+
+{% endblock body %}
+
+    
+    

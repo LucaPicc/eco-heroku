@@ -1,0 +1,39 @@
+{% extends 'users/home-user.html' %}
+{% block title %}Listado de productos{% endblock title %}
+{% block body %}
+    {% if object_list %}
+        <div class="container" style="padding:5%">
+            <div class="card">
+                <div class="card-header text-ligth" style = "background:#9fedd4;">
+                    <strong class="card-title"><h1 class="text-center">Productos en stock</h1></strong>
+                </div>
+                <div class="table-stats order-table ov-h">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Material</th>
+                                <th>Cantidad en kilogramos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for prod_stock in object_list %}
+                            
+                            {% if prod_stock.entity_id == user.entity_id %}
+                                
+                            <tr>
+                                <td>{{ prod_stock.id }}</td>
+                                <td>{{ prod_stock.product }}</td>
+                                <td>{{ prod_stock.cantidad }}</td>
+                            </tr>
+                                
+                            {% endif %}
+                                                                    
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock body %}

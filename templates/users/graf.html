@@ -1,0 +1,79 @@
+{% extends 'users/home-user.html' %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js" integrity="sha512-QEiC894KVkN9Tsoi6+mKf8HaCLJvyA6QIRzY5KrfINXYuP9NxdIkRQhGq3BZi0J4I7V5SidGM3XUQ5wFiMDuWg==" crossorigin="anonymous"></script>
+
+    
+    {% endblock scripts %}
+
+
+{% block title %}Graficas{% endblock title %}
+
+{% block body %}
+    <div class="container" style="padding: 5% 5%;">
+        <div class="card mb-3" style="max-width=540px">
+            <div class="card-header">Grafica de Ejemplo</div>
+            <div class="card-body">
+                <canvas id="myChar-bar"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="padding: 5% 5%;">
+        <div class="card mb-3" style="max-width=540px">
+            <div class="card-header">Grafica de Ejemplo</div>
+            <div class="card-body">
+                <canvas id="myChar-radar"></canvas>
+            </div>
+        </div>
+    </div>    
+    <script>
+        var ctx = document.getElementById("myChar-bar").getContext('2d')
+        var myChar = new Chart(ctx,{
+            type :"bar",
+            data:{
+                labels:['col1', 'col2','col3'],
+                datasets :[{
+                    label:'Num datos',
+                    data : [10,9,15],
+                    backgroundColor : [
+                        'rgb(102, 255, 153,0.5)',
+                        'rgb(255, 0, 102)',
+                        'rgb(0, 204, 255)'
+                    ]
+                }] 
+            },
+            options:{
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+        var ctx2 = document.getElementById("myChar-radar").getContext('2d')
+        var myRadarChart = new Chart(ctx2, {
+            type: 'radar',
+            data:{
+                labels:['skill1','skill2','skill3'],
+                datasets:[{
+                    label:'empresa1',
+                    data:[20,0,40]
+                },{
+                    label:'empresa2',
+                    data:[10,20,30],
+                    backgroundColor:'rgb(102, 255, 153,0.5)'
+                },{
+                    label:'media',
+                    data:[25,30,40],
+                    backgroundColor:'rgb(0, 204, 255,0.1)'
+                }
+
+
+                ]
+            } ,
+        });
+    </script>
+    
+{% endblock body %}

@@ -1,0 +1,61 @@
+{% extends 'users/home-user.html' %}
+{% block title %}Entidades{% endblock title %}
+    
+
+
+
+{% block body %}
+    <div class="container" style="padding: 10% 0;">
+        <div class="col">
+            <div class="row-sm-5">
+                <div class="card text-center">
+                    <div class="card-header" style="background-color: #ddf6dd;">
+                        <h5>Indice de Productividad : {{mu_indc_prud}} </h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Parametros estadisticos relavantes</h5>
+                        <p class="card-text">Toneladas recuperadas para reciclado por año : {{mu.ton_recup}}</p>
+                        <p class="card-text">Personas trabajando en clasificación : {{mu.pers_clas}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "container" style="padding: 5% 0;">
+                <div class="row-sm-5">
+                    <div class="card text-center">
+                        <div class="card-header" style="background-color: #ddf6dd;">
+                            <h5>Indice de Inclución laboral: {{mu_indc_lab}} </h5>
+                        </div>
+                        <h5 class="card-title">Parametros estadisticos relevantes</h5>
+                        <p class="card-text">Personas trabajando en recolección: {{mu.pers_recol}} </p>
+                        <p class="card-text">Personas trabajando en complejo ambiental: {{mu.pers_comp_am}} </p>
+                        <p class="card-text">Habitantes atendidos en la ciudad: {{mu.hab}} </p>
+                    </div>
+                </div>
+                <div class="row-sm-5">
+                    <div class="card text-center">
+                        <div class="card-header" style="background-color: #ddf6dd;">
+                            <h5>Indice costos GIRSU: {{mu_girsu}} </h5>
+                        </div>
+                        <h5 class="card-title">Parametros estadisticos relevantes</h5>
+                        <p class="card-text">Toneladas recuperadaspara reciclado: {{mu.ton_recup}} </p>
+                        <p class="card-text">Toneladas en complejo ambiental: {{mu.ton_proces}} </p>
+                        <p class="card-text">Costo recolección total en dolares por año: {{mu.cost_recol}} </p>
+                        <p class="card-text">Costo complejo ambiental total en dolares por año: {{mu.cost_comp_am}} </p>
+                    </div>
+                </div>
+                <div class="row-sm-5">
+                    <div class="card text-center">
+                        <div class="card-header" style="background-color: #ddf6dd;">
+                            <h5>Indice de Reciclaje por Habitante: {{mu_indc_rec}} </h5>
+                        </div>
+                        <h5 class="card-title">Parametros estadisticos relevantes</h5>
+                        <p class="card-text">Toneladas recuperadaspara reciclado: {{mu.ton_recup}} </p>
+                        <p class="card-text">Habitantes atendidos de la ciudad: {{mu.hab}} </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+        
+{% endblock body %}
+    

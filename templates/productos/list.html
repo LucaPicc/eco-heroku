@@ -1,0 +1,37 @@
+{% extends 'users/home-user.html' %}
+{% block title %}Listado de productos{% endblock title %}
+{% block body %}
+    {% if object_list %}
+        <div class="container" style="padding:5%">
+            <div class="card">
+                <div class="card-header text-ligth" style = "background:#9fedd4;">
+                    <strong class="card-title"><h1 class="text-center">Listado de Producto</h1></strong>
+                </div>
+                <div class="table-stats order-table ov-h">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre de Producto</th>
+                                <th>Descripción</th>
+                                <th>Material</th>
+                                <th>Cant./Kg</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for producto in object_list %}
+                                <tr>
+                                    <td>{{ producto.id }}</td>
+                                    <td>{{ producto.nombre }}</td>
+                                    <td>{{ producto.descripcion }}</td>
+                                    <td>{{ producto.material }}</td>
+                                    <td>{{ producto.cantkg }}</td>
+                                </tr>                                    
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock body %}

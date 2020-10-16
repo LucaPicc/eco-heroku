@@ -1,0 +1,24 @@
+{% extends 'users/home-user.html' %}
+{% block title %}registro de usuarios{% endblock title %}
+
+
+{% block body %}
+{% if perms.user.can_add_user %}
+    <div class="container" style="padding : 5%">
+        <div class="card">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class = "btn btn-primary">Resgistrar</button>
+            </form>
+        </div>
+    </div>
+{% else %}
+    <div class="container">
+        <h1>No tiene Permisos de Acceso</h1>
+    </div>
+{% endif %}
+{% endblock body %}
+    
+
+
